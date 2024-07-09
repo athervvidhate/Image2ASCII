@@ -1,7 +1,6 @@
 
 from PIL import Image
 import sys
-import numpy as np
 
 def convert():
 
@@ -29,7 +28,7 @@ def convert():
             asciiRep += "\n"
         
         # Takes the average of the RGB values to get a brightness value
-        avg = np.mean(pixels[i])
+        avg = sum(pixels[i])/3
 
         asciiRep += asciiMap[int(avg) * len(asciiMap) // 256]
     print(asciiRep)
